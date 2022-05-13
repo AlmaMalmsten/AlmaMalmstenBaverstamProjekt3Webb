@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <script type="module" src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Ergo Fysik 1 Formler För Mig</h1>
+      </header>
+      <div class="omkring">
+      <div class="test">
+        <button v-on:click="showRörelse = true">Tid</button>
+        <div class="test2" v-if="showRörelse">
+            <input v-model="T" placeholder="edit me" />
+        </div>
+        <button v-on:click="showNewton = true">Sträcka</button>
+        <div class="test2" v-if="showNewton">
+            <input v-model="S" placeholder="edit me" />
+        </div>
+        <button v-on:click="showEnergi = true">Hastighet</button>
+        <div class="test2" v-if="showEnergi">
+            <input v-model="V" placeholder="edit me" />
+        </div>
+      </div>
+      <div class="write">
+          <p>Hastighet är: {{S}} / {{T}}</p>
+          <p>Sträckan är: {{V}} * {{T}}</p>
+          <p>Tiden är: {{S}} / {{T}}</p>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
